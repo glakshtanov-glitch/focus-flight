@@ -19,7 +19,14 @@ What that means for the app:
 - **Not every airport fits in a day.** About 130 queries a day covers the airports you and your friends actually depart from, refreshed daily. All ~4,000 airports would take a month per cycle.
 - **Arrivals are estimated.** OpenSky guesses the arrival airport from where the aircraft's signal ends. On some flights it's missing or wrong, and coverage is thinner where few people run receivers (much of Africa, parts of Asia). Merging a week of departures and only keeping destinations seen at least twice would filter most of the noise.
 
-Still to verify once the account exists: real query results for Warsaw, and how many flights have no arrival airport.
+### Verified with the account (2026-10-25)
+
+Query: Warsaw Chopin (EPWA) departures on 2026-10-24, one day. It cost 30 credits (3,970 left that day).
+
+- **255 departures, 83 distinct destinations.**
+- **28 flights (11%) had no arrival airport**, and 8 more were recorded as landing back at Warsaw (training or turned-back flights).
+- **Close match with Wikipedia.** Of 78 destinations that map to airports in our dataset, 44 matched the Wikipedia list directly. Most of the rest (LHR, JFK, BCN, FCO, MAD…) are on Wikipedia too but among the names the simple matching missed.
+- **Some noise.** A few destinations are small airfields (LQVI, LDZL) or a hop to nearby Modlin (WMI). Keeping only destinations with scheduled service that appear on at least two days of a week would remove them.
 
 ## Fallback: Wikipedia "Airlines and destinations" tables
 
@@ -34,4 +41,7 @@ Trade-offs against OpenSky:
 
 ## Recommendation
 
-Start with **Wikipedia** for phase 1: it works today without an account and covers every airport. Add **OpenSky** later as a cross-check ("flown in the last week") if the account is set up. Either way, routes are prepared by a script into `public/data/routes.json`, so the app doesn't care which source built it.
+Use **both**, prepared by a script into `public/data/routes.json` so the app doesn't care which source built it:
+
+- **OpenSky** for the airports you actually depart from (Warsaw first): routes really flown in the last week, refreshed daily by a scheduled GitHub Action.
+- **Wikipedia** for every other airport, so any departure in the world has destinations.
