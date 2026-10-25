@@ -1,0 +1,26 @@
+:root {
+  --sky-top: #f6d5c8;
+  --sky-bottom: #c9d8ec;
+  --ink: #3d4a5c;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(var(--sky-top), var(--sky-bottom));
+}
+
+#app {
+  height: 100%;
+}
