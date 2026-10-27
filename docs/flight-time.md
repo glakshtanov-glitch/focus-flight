@@ -18,11 +18,11 @@ The result is rounded to the nearest minute.
 
 | To | Distance | Cruise speed | Flight time |
 | --- | --- | --- | --- |
-| Kraków (KRK) | 246 km | 780 km/h | 0:48 |
+| Kraków (KRK) | 246 km | 780 km/h | 0:49 |
 | London Heathrow (LHR) | 1469 km | 830 km/h | 2:16 |
 | Barcelona (BCN) | 1870 km | 830 km/h | 2:45 |
 | Dubai (DXB) | 4156 km | 900 km/h | 5:07 |
-| New York JFK (JFK) | 6848 km | 900 km/h | 8:06 |
+| New York JFK (JFK) | 6848 km | 900 km/h | 8:07 |
 | Tokyo Narita (NRT) | 8613 km | 900 km/h | 10:04 |
 
 These come out roughly 10–15% shorter than airline timetables, which add padding for winds, air-traffic queues and holding. The timer only needs the numbers to be consistent with each other, so the formula stays simple. If they should feel closer to the timetable, raise the allowance or multiply the distance by about 1.1.
