@@ -33,9 +33,6 @@ In real-routes mode the globe shows destinations (step 3) before the aircraft is
 
 Once the aircraft is chosen, its own speed would give a slightly different time. The session length doesn't change: the in-flight event (tailwind, holding pattern and so on) absorbs the difference, the same way it closes the gap to the chosen time.
 
-## Open question: custom-routes mode
+## Custom-routes mode
 
-In custom-routes mode the session lasts as long as the flight, so the aircraft choice changes the session length. Options:
-
-1. Use the reference speed for the time under each airport code, and let the chosen aircraft set the final length (shown on the aircraft cards).
-2. Always use the reference speed, so the length shown on the globe is the length you get.
+Decided 2026-10-27: the time shown under each airport code on the globe is the final session length. It always uses the reference speed, so choosing an aircraft never changes how long the session lasts.
